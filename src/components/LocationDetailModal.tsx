@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import type { StudioLocation, Language } from '../types';
 import { Lightbox } from './Lightbox';
-import { X, Maximize2, CheckCircle2, Calendar } from 'lucide-react';
+import { X, Maximize2, CheckCircle2, Calendar, Tag, Camera, Mic, Film } from 'lucide-react';
 
 interface LocationDetailModalProps {
   location: StudioLocation | null;
@@ -152,6 +152,114 @@ export const LocationDetailModal: React.FC<LocationDetailModalProps> = ({
                 {isRtl ? 'السعة الاستيعابية' : 'Crew Capacity'}
               </span>
               <p style={{ fontSize: '0.95rem', fontWeight: 600, color: '#FFFFFF' }}>{specs.capacity}</p>
+            </div>
+          </div>
+
+          {/* PRICING SECTION - Added for Every Location */}
+          <div style={{ marginBottom: '2.5rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.25rem' }}>
+              <Tag size={20} style={{ color: 'var(--brand-red)' }} />
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '0.04em' }}>
+                {isRtl ? 'الأسعار' : 'PRICING'}
+              </h3>
+            </div>
+
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                gap: '1.25rem',
+              }}
+            >
+              {/* Studio Rental */}
+              <div
+                style={{
+                  backgroundColor: 'var(--bg-dark-card)',
+                  border: '1px solid var(--border-dark-hover)',
+                  borderRadius: 'var(--radius-md)',
+                  padding: '1.25rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.75rem',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--brand-red)' }}>
+                  <Camera size={18} />
+                  <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#FFFFFF' }}>
+                    {isRtl ? 'استئجار الاستوديو' : 'Studio Rental'}
+                  </h4>
+                </div>
+                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.9rem', color: 'var(--text-dark-secondary)' }}>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                    <span style={{ color: 'var(--brand-red)', fontWeight: 700 }}>•</span>
+                    <span>{isRtl ? '٢٠٠٠ جنيه / الساعة — بدون معدات' : '2,000 EGP / Hour — Without Equipment'}</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                    <span style={{ color: 'var(--brand-red)', fontWeight: 700 }}>•</span>
+                    <span>{isRtl ? '٤٠٠٠ جنيه / الساعة — بالمعدات' : '4,000 EGP / Hour — With Equipment'}</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Podcast */}
+              <div
+                style={{
+                  backgroundColor: 'var(--bg-dark-card)',
+                  border: '1px solid var(--border-dark-hover)',
+                  borderRadius: 'var(--radius-md)',
+                  padding: '1.25rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.75rem',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--brand-red)' }}>
+                  <Mic size={18} />
+                  <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#FFFFFF' }}>
+                    {isRtl ? 'البودكاست' : 'Podcast'}
+                  </h4>
+                </div>
+                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.9rem', color: 'var(--text-dark-secondary)' }}>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                    <span style={{ color: 'var(--brand-red)', fontWeight: 700 }}>•</span>
+                    <span>{isRtl ? '٤٠٠٠ جنيه / الساعة — بدون مونتاج' : '4,000 EGP / Hour — Without Editing'}</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                    <span style={{ color: 'var(--brand-red)', fontWeight: 700 }}>•</span>
+                    <span>{isRtl ? '٦٠٠٠ جنيه / الساعة — بالمونتاج' : '6,000 EGP / Hour — With Editing'}</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Reels */}
+              <div
+                style={{
+                  backgroundColor: 'var(--bg-dark-card)',
+                  border: '1px solid var(--border-dark-hover)',
+                  borderRadius: 'var(--radius-md)',
+                  padding: '1.25rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.75rem',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--brand-red)' }}>
+                  <Film size={18} />
+                  <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#FFFFFF' }}>
+                    {isRtl ? 'الريل' : 'Reels'}
+                  </h4>
+                </div>
+                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.9rem', color: 'var(--text-dark-secondary)' }}>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                    <span style={{ color: 'var(--brand-red)', fontWeight: 700 }}>•</span>
+                    <span>{isRtl ? '١٠٠٠ جنيه — بدون مونتاج' : '1,000 EGP — Without Editing'}</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                    <span style={{ color: 'var(--brand-red)', fontWeight: 700 }}>•</span>
+                    <span>{isRtl ? '١٥٠٠ جنيه — بالمونتاج' : '1,500 EGP — With Editing'}</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
