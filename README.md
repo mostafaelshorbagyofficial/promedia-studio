@@ -1,32 +1,25 @@
-# React + TypeScript + Vite
+# ProMedia Studio — Interactive Creative & Media Production Showcase
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+![ProMedia Studio Preview](./public/preview.jpg)
 
-Currently, two official plugins are available:
+🌐 **Live Platform:** [promedia-studio-2est-zeta.vercel.app](https://promedia-studio-2est-zeta.vercel.app/)  
+🏢 **Organization:** **ProMedia**  
+👨‍💻 **Digital Engineering & Project Execution:** [Mostafa Mohamed Farhat (Elshorbagy)](https://mostafa-portfolio-iota.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Interactive digital studio showcase built for **ProMedia**, presenting the agency's media production capabilities, creative direction, commercial photography/videography, and brand partnership ecosystem.
 
-## Expanding the Oxlint configuration
+## Tech Stack
+- **Framework:** React + TypeScript + Vite
+- **Deployment:** Vercel
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Local Development
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
+npm run build
 ```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
